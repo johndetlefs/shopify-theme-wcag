@@ -12,24 +12,12 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        tailwindcss(), // Enables Tailwind CSS
-        autoprefixer(), // Adds vendor prefixes for compatibility
+        tailwindcss, // Enables Tailwind CSS
+        autoprefixer, // Adds vendor prefixes for compatibility
       ],
     },
   },
   build: {
-    target: "es2015", // Ensures modern JavaScript compatibility
-    outDir: "dist", // Outputs the built assets into the Shopify theme folder
-    rollupOptions: {
-      output: {
-        // Ensures that React components are wrapped as Web Components properly
-        format: "esm",
-      },
-    },
-  },
-  resolve: {
-    alias: {
-      "@": "/src", // Simplifies imports by using '@' as alias for the 'src' directory
-    },
+    minify: false, // Disables minification for easier debugging
   },
 });

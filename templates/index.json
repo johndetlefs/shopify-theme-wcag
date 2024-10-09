@@ -1,4 +1,11 @@
 {
-    "sections": {},
-    "order": []
+    "sections": {
+        "accordion": {
+        "type": "accordion",
+        "settings": {}
+        },
+    },
+    "order": [
+        "accordion",
+    ]
 }
