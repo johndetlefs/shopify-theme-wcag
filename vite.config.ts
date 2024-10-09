@@ -3,13 +3,11 @@ import react from "@vitejs/plugin-react";
 import shopify from "vite-plugin-shopify";
 import tailwindcss from "tailwindcss";
 import autoprefixer from "autoprefixer";
-import importMaps from "vite-plugin-shopify-import-maps";
 
 export default defineConfig({
   plugins: [
     react(), // This sets up React 19
     shopify(), // Integrates Vite with Shopify
-    importMaps(), // Manages Shopify imports efficiently
   ],
   css: {
     postcss: {

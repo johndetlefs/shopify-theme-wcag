@@ -1,7 +1,4 @@
 {
-    "sections": {
-        "accordion": {
-            "type": "accordion",
-        }
-    }
+    "sections": {},
+    "order": []
 }
