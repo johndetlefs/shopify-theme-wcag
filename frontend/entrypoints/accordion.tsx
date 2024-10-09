@@ -1,66 +1,98 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+import { create, cssomSheet } from 'twind'
+
+const sheet = cssomSheet({ target: new CSSStyleSheet() })
+
+const { tw } = create({ sheet })
 
 type AccordionItem = {
-  title: string;
-  content: string;
+
+        title: string;
+        content: string;
+
+  
 };
 
 type AccordionProps = {
-  data: AccordionItem[];
+    data: AccordionItem[];
 };
 
 // Accordion Component
 const Accordion: React.FC<AccordionProps> = ({ data }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
-  const handleToggle = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index);
-  };
+    const items = [
+        {
+            title: 'What is your return policy?',
+            content: 'You can return any item within 30 days of purchase.'
+        },
+        {
+            title: 'How do I track my order?',
+            content: 'You can track your order by visiting the order tracking page.'
+        },
+        {
+            title: 'How can I contact customer support?',
+            content: 'You can contact customer support by emailing'
+        }
+    ]
 
-  return (
-    <div className="accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md">
-      {data.map((item, index) => (
-        <div key={index} className="accordion-item mb-4">
-          <button
-            className="accordion-title w-full text-left py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300"
-            id={`accordion-title-${index}`}
-            onClick={() => handleToggle(index)}
-            aria-expanded={activeIndex === index}
-            aria-controls={`accordion-content-${index}`}
-          >
-            {item.title}
-          </button>
-          <div
-            id={`accordion-content-${index}`}
-            role="region"
-            aria-labelledby={`accordion-title-${index}`}
-            className={`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
-            hidden={activeIndex !== index}
-          >
-            <p className="p-4 bg-gray-100 rounded-md mt-2">{item.content}</p>
-          </div>
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
+
+    const handleToggle = (index: number) => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    return (
+        <div className={tw`accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md`}>
+            {items.map((item, index) => {
+  
+                return (
+                    <div key={index} className={tw`accordion-item mb-4`}>
+                    <button
+                        className={tw`accordion-title w-full text-left py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300`}
+                        id={`accordion-title-${index}`}
+                        onClick={() => handleToggle(index)}
+                        aria-expanded={activeIndex === index}
+                        aria-controls={`accordion-content-${index}`}
+                    >
+                        {item.title}
+                    </button>
+                    <div
+                        id={`accordion-content-${index}`}
+                        role="region"
+                        aria-labelledby={`accordion-title-${index}`}
+                        className={tw`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
+                        hidden={activeIndex !== index}
+                    >
+                        <p className={tw`p-4 bg-gray-100 rounded-md mt-2`}>{item.content}</p>
+                    </div>
+                </div>
+                )
+            })}
+                
         </div>
-      ))}
-    </div>
-  );
+    );
 };
 
 // Creating the Web Component Wrapper
 class AccordionElement extends HTMLElement {
-  connectedCallback() {
-    console.log('AccordionElement connected to the DOM');
-    const shadowRoot = this.attachShadow({ mode: 'open' });
-    const container = document.createElement('div');
-    shadowRoot.appendChild(container);
-    const root = createRoot(container);
+    connectedCallback() {
+        console.log('AccordionElement connected to the DOM');
+        const shadowRoot = this.attachShadow({ mode: 'open' });
 
-    // Fetching live data from Shopify settings
-    const blockData = this.getAttribute('data-settings');
-    const parsedData: AccordionItem[] = blockData ? JSON.parse(blockData) : [];
+        shadowRoot.adoptedStyleSheets = [sheet.target]
 
-    root.render(<Accordion data={parsedData} />);
-  }
+        const container = document.createElement('div');
+        shadowRoot.appendChild(container);
+        const root = createRoot(container);
+
+        // Fetching live data from Shopify settings
+        const blockData = this.getAttribute('data-settings');
+        console.log('Block data:', blockData);
+        const parsedData: AccordionItem[] = blockData ? JSON.parse(blockData) : [];
+
+        root.render(<Accordion data={parsedData} />);
+    }
 }
 
 // Registering the Web Component

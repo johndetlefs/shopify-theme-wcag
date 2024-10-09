@@ -1,5 +1,5 @@
 export default {
-  syntax: "postcss-jsx",
+  syntax: "postcss-tsx",
   plugins: {
     tailwindcss: {},
     autoprefixer: {},

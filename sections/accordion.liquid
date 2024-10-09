@@ -2,9 +2,7 @@
   render 'vite-tag' with 'accordion.tsx'
 -%}
 
-<accordion-faq data-settings="{{ section.blocks | json | escape }}">
-  <p>This is how the accordion looks before things happen!</p>
-</accordion-faq>
+<accordion-faq data-settings="{{ section.blocks | json }}"></accordion-faq>
 
 {% schema %}
 {

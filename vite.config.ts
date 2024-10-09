@@ -19,6 +19,7 @@ export default defineConfig({
   },
   build: {
     minify: false, // Disables minification for easier debugging
+    emptyOutDir: false, // Prevents Vite from deleting the `dist` directory
   },
   resolve: {
     extensions: ['.js', '.ts', '.jsx', '.tsx'], // Ensures Vite resolves these file types
