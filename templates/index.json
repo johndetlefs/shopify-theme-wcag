@@ -22,22 +22,22 @@
         "faq_item_HGHacz": {
           "type": "faq_item",
           "settings": {
-            "title": "What is your return policy?",
-            "content": "You can return any item within 30 days of purchase."
+            "title": "I'd like an ice-cream please",
+            "content": "No. \n\nNo ice-cream for you."
           }
         },
         "faq_item_FybDjT": {
           "type": "faq_item",
           "settings": {
-            "title": "What is your return policy?",
-            "content": "You can return any item within 30 days of purchase."
+            "title": "So what's the real deal here?",
+            "content": "What? It's just the real deal, you freak!"
           }
         },
         "faq_item_CrUDCM": {
           "type": "faq_item",
           "settings": {
             "title": "That sounds pretty good.",
-            "content": "Youre damn right."
+            "content": "You're damn right."
           }
         }
       },
