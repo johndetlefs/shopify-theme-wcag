@@ -19,25 +19,33 @@
             "content": "You can return any item within 30 days of purchase."
           }
         },
+        "faq_item_HGHacz": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "You can return any item within 30 days of purchase."
+          }
+        },
+        "faq_item_FybDjT": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "You can return any item within 30 days of purchase."
+          }
+        },
         "faq_item_CrUDCM": {
           "type": "faq_item",
           "settings": {
             "title": "That sounds pretty good.",
-            "content": "You're damn right."
-          }
-        },
-        "faq_item_UcdKYh": {
-          "type": "faq_item",
-          "settings": {
-            "title": "Why isn't this working?",
-            "content": "That's a really good question."
+            "content": "Youre damn right."
           }
         }
       },
       "block_order": [
         "faq_item_bEnXRd",
-        "faq_item_CrUDCM",
-        "faq_item_UcdKYh"
+        "faq_item_HGHacz",
+        "faq_item_FybDjT",
+        "faq_item_CrUDCM"
       ],
       "settings": {
       }
