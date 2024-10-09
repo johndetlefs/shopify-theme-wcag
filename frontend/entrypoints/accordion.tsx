@@ -49,6 +49,7 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
 // Creating the Web Component Wrapper
 class AccordionElement extends HTMLElement {
   connectedCallback() {
+    console.log('AccordionElement connected to the DOM');
     const shadowRoot = this.attachShadow({ mode: 'open' });
     const container = document.createElement('div');
     shadowRoot.appendChild(container);

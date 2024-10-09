@@ -1,5 +1,9 @@
-<accordion-faq data-settings="{{ section.settings | json }}">
-  <p>This is the accordion before things happen</p>
+{%- liquid
+  render 'vite-tag' with 'accordion.tsx'
+-%}
+
+<accordion-faq data-settings="{{ section.blocks | json | escape }}">
+  <p>This is how the accordion looks before things happen!</p>
 </accordion-faq>
 
 {% schema %}

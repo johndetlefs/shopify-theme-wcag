@@ -20,4 +20,7 @@ export default defineConfig({
   build: {
     minify: false, // Disables minification for easier debugging
   },
+  resolve: {
+    extensions: ['.js', '.ts', '.jsx', '.tsx'], // Ensures Vite resolves these file types
+  },
 });
