@@ -79,13 +79,11 @@ class AccordionElement extends HTMLElement {
         // Fetching live data from Shopify settings
         const blockData = this.getAttribute('data-settings');
 
-        console.log('Raw Data:', blockData);
-
         /**
- * Cleans a JSON string by escaping unescaped line breaks within string literals.
- * @param {string} jsonStr - The JSON string to clean.
- * @returns {string} - The cleaned JSON string with line breaks escaped.
- */
+         * Cleans a JSON string by escaping unescaped line breaks within string literals.
+         * @param {string} jsonStr - The JSON string to clean.
+         * @returns {string} - The cleaned JSON string with line breaks escaped.
+         */
         function cleanJson(jsonStr: string) {
             let inString = false;    // Tracks if we're inside a string literal
             let escaped = false;     // Tracks if the current character is escaped
@@ -132,11 +130,7 @@ class AccordionElement extends HTMLElement {
             rawData = cleanJson(rawData);
         }
 
-        console.log('Sanitized Raw Data:', rawData);
-
         const parsedData: Data = rawData ? JSON.parse(rawData) : { items: [] };
-        console.log('Parsed Data:', parsedData);
-
 
         root.render(<Accordion data={parsedData} />);
     }
