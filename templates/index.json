@@ -1,11 +1,41 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
-    "sections": {
-        "accordion": {
-        "type": "accordion",
-        "settings": {}
+  "sections": {
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "faq_item_bEnXRd": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "You can return any item within 30 days of purchase."
+          }
         },
-    },
-    "order": [
-        "accordion",
-    ]
+        "faq_item_CrUDCM": {
+          "type": "faq_item",
+          "settings": {
+            "title": "That sounds pretty good.",
+            "content": "You're damn right."
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_bEnXRd",
+        "faq_item_CrUDCM"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "accordion"
+  ]
 }
