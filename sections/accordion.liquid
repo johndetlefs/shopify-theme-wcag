@@ -1,0 +1,39 @@
+<accordion-faq data-settings="{{ section.settings | json }}"></accordion-faq>
+
+{% schema %}
+{
+  "name": "FAQ Accordion",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "FAQ Title",
+          "default": "What is your return policy?"
+        },
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "FAQ Content",
+          "default": "You can return any item within 30 days of purchase."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

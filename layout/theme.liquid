@@ -1,0 +1,16 @@
+<!doctype html>
+<html class="js" lang="en">
+  <head>
+    {{ content_for_header }}
+    <script>
+      if (Shopify.designMode) {
+        document.documentElement.classList.add('shopify-design-mode');
+      }
+    </script>
+  </head>
+  <body>
+    <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>
