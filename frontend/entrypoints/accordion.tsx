@@ -7,8 +7,8 @@ const sheet = cssomSheet({ target: new CSSStyleSheet() })
 const { tw } = create({ sheet })
 
 type AccordionItem = {
-        title: string;
-        content: string;
+    title: string;
+    content: string;
 };
 
 type AccordionItems = AccordionItem[];
@@ -24,7 +24,7 @@ type AccordionProps = {
 // Accordion Component
 const Accordion: React.FC<AccordionProps> = ({ data }) => {
 
-    const {items} = data;
+    const { items } = data;
 
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -35,31 +35,31 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
     return (
         <div className={tw`accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md`}>
             {items.map((item, index) => {
-  
+
                 return (
                     <div key={index} className={tw`accordion-item mb-4`}>
-                    <button
-                        className={tw`accordion-title w-full text-left py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300`}
-                        id={`accordion-title-${index}`}
-                        onClick={() => handleToggle(index)}
-                        aria-expanded={activeIndex === index}
-                        aria-controls={`accordion-content-${index}`}
-                    >
-                        {item.title}
-                    </button>
-                    <div
-                        id={`accordion-content-${index}`}
-                        role="region"
-                        aria-labelledby={`accordion-title-${index}`}
-                        className={tw`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
-                        hidden={activeIndex !== index}
-                    >
-                        <p className={tw`p-4 bg-gray-100 rounded-md mt-2`}>{item.content}</p>
+                        <button
+                            className={tw`accordion-title w-full text-left py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300`}
+                            id={`accordion-title-${index}`}
+                            onClick={() => handleToggle(index)}
+                            aria-expanded={activeIndex === index}
+                            aria-controls={`accordion-content-${index}`}
+                        >
+                            {item.title}
+                        </button>
+                        <div
+                            id={`accordion-content-${index}`}
+                            role="region"
+                            aria-labelledby={`accordion-title-${index}`}
+                            className={tw`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
+                            hidden={activeIndex !== index}
+                        >
+                            <p className={tw`p-4 bg-gray-100 rounded-md mt-2 whitespace-pre-wrap`}>{item.content}</p>
+                        </div>
                     </div>
-                </div>
                 )
             })}
-                
+
         </div>
     );
 };
@@ -78,8 +78,65 @@ class AccordionElement extends HTMLElement {
 
         // Fetching live data from Shopify settings
         const blockData = this.getAttribute('data-settings');
-        // console.log('Block data:', blockData);
-        const parsedData: Data = blockData ? JSON.parse(blockData) : { items: [] };
+
+        console.log('Raw Data:', blockData);
+
+        /**
+ * Cleans a JSON string by escaping unescaped line breaks within string literals.
+ * @param {string} jsonStr - The JSON string to clean.
+ * @returns {string} - The cleaned JSON string with line breaks escaped.
+ */
+        function cleanJson(jsonStr: string) {
+            let inString = false;    // Tracks if we're inside a string literal
+            let escaped = false;     // Tracks if the current character is escaped
+            let result = '';         // Accumulates the cleaned JSON string
+
+            for (let i = 0; i < jsonStr.length; i++) {
+                let char = jsonStr[i];
+
+                if (char === '"' && !escaped) {
+                    inString = !inString; // Toggle inString status
+                    result += char;
+                    continue;
+                }
+
+                if (inString) {
+                    if (char === '\\' && !escaped) {
+                        escaped = true;    // Next character is escaped
+                        result += char;
+                        continue;
+                    }
+
+                    // If we encounter a line break inside a string, replace it with \\n
+                    if ((char === '\n' || char === '\r') && !escaped) {
+                        result += '\\n';
+                        continue;
+                    }
+                }
+
+                // Reset escaped status if it was set
+                if (escaped) {
+                    escaped = false;
+                }
+
+                result += char;
+            }
+
+            return result;
+        }
+
+        // Sanitize the raw data to handle line breaks and special characters
+        let rawData = blockData
+
+        if (rawData) {
+            rawData = cleanJson(rawData);
+        }
+
+        console.log('Sanitized Raw Data:', rawData);
+
+        const parsedData: Data = rawData ? JSON.parse(rawData) : { items: [] };
+        console.log('Parsed Data:', parsedData);
+
 
         root.render(<Accordion data={parsedData} />);
     }
