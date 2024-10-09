@@ -6,8 +6,12 @@
   "author": "",
   "license": "MIT",
   "scripts": {
+    "login": "shopify theme dev --store get-rid-of-dad-bod",
     "dev": "vite",
     "build": "vite build",
+    "watch:vite": "vite --watch",
+    "watch:shopify": "shopify theme dev",
+    "start": "concurrently \"npm:watch:* \" -k",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -31,6 +35,7 @@
     "vite": "^5.4.8",
     "@vitejs/plugin-react": "^4.3.2",
     "vite-plugin-shopify": "^3.0.1",
-    "vite-plugin-shopify-import-maps": "^0.5.4"
+    "vite-plugin-shopify-import-maps": "^0.5.4",
+    "concurrently": "^9.0.1"
   }
 }
