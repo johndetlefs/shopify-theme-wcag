@@ -7,34 +7,24 @@ const sheet = cssomSheet({ target: new CSSStyleSheet() })
 const { tw } = create({ sheet })
 
 type AccordionItem = {
-
         title: string;
         content: string;
+};
 
-  
+type AccordionItems = AccordionItem[];
+
+type Data = {
+    items: AccordionItems;
 };
 
 type AccordionProps = {
-    data: AccordionItem[];
+    data: Data
 };
 
 // Accordion Component
 const Accordion: React.FC<AccordionProps> = ({ data }) => {
 
-    const items = [
-        {
-            title: 'What is your return policy?',
-            content: 'You can return any item within 30 days of purchase.'
-        },
-        {
-            title: 'How do I track my order?',
-            content: 'You can track your order by visiting the order tracking page.'
-        },
-        {
-            title: 'How can I contact customer support?',
-            content: 'You can contact customer support by emailing'
-        }
-    ]
+    const {items} = data;
 
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
@@ -88,8 +78,8 @@ class AccordionElement extends HTMLElement {
 
         // Fetching live data from Shopify settings
         const blockData = this.getAttribute('data-settings');
-        console.log('Block data:', blockData);
-        const parsedData: AccordionItem[] = blockData ? JSON.parse(blockData) : [];
+        // console.log('Block data:', blockData);
+        const parsedData: Data = blockData ? JSON.parse(blockData) : { items: [] };
 
         root.render(<Accordion data={parsedData} />);
     }

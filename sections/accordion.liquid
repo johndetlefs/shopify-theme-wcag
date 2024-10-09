@@ -1,4 +1,21 @@
-<h1>This is the accordion section</h1>
+{%- liquid
+  render 'vite-tag' with 'accordion.tsx'
+-%}
+
+{%- capture props -%}
+    {
+      "items": [
+        {% for block in section.blocks %}
+          {
+            "title": "{{ block.settings.title }}",
+            "content": "{{ block.settings.content }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+  {%- endcapture -%}
+
+<accordion-faq data-settings="{{ props | escape }}"></accordion-faq>
 
 {% schema %}
 {
