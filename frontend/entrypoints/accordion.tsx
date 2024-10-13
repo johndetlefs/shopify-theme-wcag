@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
-import { create, cssomSheet } from 'twind'
+import { setupTwind } from './twindSetup';
 
-const sheet = cssomSheet({ target: new CSSStyleSheet() })
-
-const { tw } = create({ sheet })
+const { tw, sheet } = setupTwind();
 
 type AccordionItem = {
     title: string;
@@ -39,13 +37,13 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
                 return (
                     <div key={index} className={tw`accordion-item mb-4`}>
                         <button
-                            className={tw`accordion-title w-full text-left py-3 px-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300`}
+                            className={tw`accordion-title w-full text-left py-3 px-4 bg-primary-50 text-white rounded-md hover:bg-primary-75 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-0`}
                             id={`accordion-title-${index}`}
                             onClick={() => handleToggle(index)}
                             aria-expanded={activeIndex === index}
                             aria-controls={`accordion-content-${index}`}
                         >
-                            {item.title}
+                            {item.title} + this has changed
                         </button>
                         <div
                             id={`accordion-content-${index}`}

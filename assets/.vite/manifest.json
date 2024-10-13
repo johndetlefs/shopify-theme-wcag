@@ -1,8 +1,0 @@
-{
-  "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-BE7LNAHm.js",
-    "name": "accordion",
-    "src": "frontend/entrypoints/accordion.tsx",
-    "isEntry": true
-  }
-}
