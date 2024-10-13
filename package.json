@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "watch:vite": "vite",
-    "watch:shopify": "shopify theme dev",
+    "watch:shopify": "npm run login",
     "start": "concurrently \"npm:watch:* \" -k",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

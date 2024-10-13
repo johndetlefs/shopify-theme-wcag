@@ -43,7 +43,7 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
                             aria-expanded={activeIndex === index}
                             aria-controls={`accordion-content-${index}`}
                         >
-                            {item.title} + this has changed
+                            {item.title}
                         </button>
                         <div
                             id={`accordion-content-${index}`}
@@ -135,7 +135,10 @@ class AccordionElement extends HTMLElement {
 }
 
 // Registering the Web Component
-customElements.define('accordion-faq', AccordionElement);
+// check if the element is already registered
+if (!customElements.get('accordion-faq'))
+    customElements.define('accordion-faq', AccordionElement);
+
 
 // Adding to Shopify Theme as a Draggable Block
 // Add the following Liquid code to your Shopify theme's JSON template file

@@ -1,10 +1,29 @@
 [
-    {
-      "name": "theme_info",
-      "theme_name": "Shopify Theme WCAG",
-      "theme_version": "0.0.1",
-      "theme_author": "John Detlefs",
-      "theme_documentation_url": "https://johndetlefs.com/",
-      "theme_support_url": "https://johndetlefs.com/"
-    }
+  {
+    "name": "theme_info",
+    "theme_name": "Shopify Theme WCAG",
+    "theme_version": "0.0.1",
+    "theme_author": "John Detlefs",
+    "theme_documentation_url": "https://johndetlefs.com/",
+    "theme_support_url": "https://johndetlefs.com/"
+  },
+  {
+    "name": "t:settings_schema.typography.name",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "type_header_font",
+        "default": "helvetica_n4",
+        "label": "header typography",
+        "info": "this is about header typography"
+      },
+      {
+        "type": "font_picker",
+        "id": "type_body_font",
+        "default": "ibm_plex_sans_n4",
+        "label": "body typography",
+        "info": "this is about body typography"
+      }
+    ]
+  },
 ]
