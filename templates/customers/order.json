@@ -1,48 +1,48 @@
 {
-    "sections": {
-      "accordion": {
-        "type": "accordion",
-        "blocks": {
-          "faq_item_bEnXRd": {
-            "type": "faq_item",
-            "settings": {
-              "title": "What is your return policy?",
-              "content": "You can return any item within 30 days of purchase."
-            }
-          },
-          "faq_item_HGHacz": {
-            "type": "faq_item",
-            "settings": {
-              "title": "I'd like an ice-cream please",
-              "content": "No. \n\nNo ice-cream for you."
-            }
-          },
-          "faq_item_FybDjT": {
-            "type": "faq_item",
-            "settings": {
-              "title": "So what's the real deal here?",
-              "content": "What? It's just the real deal, you freak!"
-            }
-          },
-          "faq_item_CrUDCM": {
-            "type": "faq_item",
-            "settings": {
-              "title": "That sounds pretty good.",
-              "content": "You're damn right."
-            }
+  "sections": {
+    "accordion": {
+      "type": "accordion",
+      "blocks": {
+        "faq_item_bEnXRd": {
+          "type": "faq_item",
+          "settings": {
+            "title": "What is your return policy?",
+            "content": "You can return any item within 30 days of purchase."
           }
         },
-        "block_order": [
-          "faq_item_bEnXRd",
-          "faq_item_HGHacz",
-          "faq_item_FybDjT",
-          "faq_item_CrUDCM"
-        ],
-        "settings": {
+        "faq_item_HGHacz": {
+          "type": "faq_item",
+          "settings": {
+            "title": "I'd like an ice-cream please",
+            "content": "No. \n\nNo ice-cream for you."
+          }
+        },
+        "faq_item_FybDjT": {
+          "type": "faq_item",
+          "settings": {
+            "title": "So what's the real deal here?",
+            "content": "What? It's just the real deal, you freak!"
+          }
+        },
+        "faq_item_CrUDCM": {
+          "type": "faq_item",
+          "settings": {
+            "title": "That sounds pretty good.",
+            "content": "You're damn right."
+          }
         }
+      },
+      "block_order": [
+        "faq_item_bEnXRd",
+        "faq_item_HGHacz",
+        "faq_item_FybDjT",
+        "faq_item_CrUDCM"
+      ],
+      "settings": {
       }
-    },
-    "order": [
-      "accordion"
-    ]
-  }
+    }
+  },
+  "order": [
+    "accordion"
+  ]
+}

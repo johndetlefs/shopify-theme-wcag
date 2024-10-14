@@ -36,6 +36,5 @@
     "vite-plugin-shopify": "^3.0.1",
     "vite-plugin-shopify-import-maps": "^0.5.4",
     "concurrently": "^9.0.1"
-
   }
 }

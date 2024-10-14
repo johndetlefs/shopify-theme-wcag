@@ -1,0 +1,15 @@
+{% layout none %}
+
+<!doctype html>
+<html>
+  <head>
+    {{ content_for_header }}
+  </head>
+  <body>
+    {% render 'skip-to-main' %}
+    <main id="main-content">
+      <h1 class="text-red-500 text-7xl">Get Rid Of DadBoss please!</h1>
+      {{ content_for_layout }}
+    </main>
+  </body>
+</html>
