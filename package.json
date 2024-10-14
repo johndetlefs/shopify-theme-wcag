@@ -6,7 +6,7 @@
   "author": "",
   "license": "MIT",
   "scripts": {
-    "login": "shopify theme dev --store get-rid-of-dad-bod --verbose --live-reload full-page",
+    "login": "shopify theme dev --store get-rid-of-dad-bod",
     "dev": "vite",
     "build": "vite build",
     "watch:vite": "vite",
