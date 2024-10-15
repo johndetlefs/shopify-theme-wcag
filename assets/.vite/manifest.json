@@ -1,17 +1,13 @@
 {
   "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-8I6Gsi4D.js",
+    "file": "accordion-zql9-AJ_.js",
     "name": "accordion",
     "src": "frontend/entrypoints/accordion.tsx",
-    "isEntry": true,
-    "imports": [
-      "frontend/entrypoints/twindSetup.js"
-    ]
+    "isEntry": true
   },
-  "frontend/entrypoints/twindSetup.js": {
-    "file": "twindSetup-53kBlt-A.js",
-    "name": "twindSetup",
-    "src": "frontend/entrypoints/twindSetup.js",
+  "frontend/entrypoints/tailwind.css": {
+    "file": "tailwind-CnFOpCFY.css",
+    "src": "frontend/entrypoints/tailwind.css",
     "isEntry": true
   }
 }

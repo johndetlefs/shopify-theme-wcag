@@ -2,11 +2,12 @@
 <html>
   <head>
     {{ content_for_header }}
+    {% render 'vite-tag' with 'tailwind.css' %}
   </head>
   <body>
     {% render 'skip-to-main' %}
     <main id="main-content">
-      <h1 class="text-red-500 text-7xl">Get Rid Of DadBod</h1>
+      <h1 class="text-primary-50 text-7xl">Get Rid Of DadBod</h1>
       {{ content_for_layout }}
     </main>
   </body>

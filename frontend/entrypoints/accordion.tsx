@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { setupTwind } from './twindSetup';
 
-const { tw, sheet } = setupTwind();
+import tailwindStyles from './tailwind.css?inline';
 
 type AccordionItem = {
     title: string;
@@ -31,13 +30,13 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
     };
 
     return (
-        <div className={tw`accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md`}>
+        <div className={`accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md`}>
             {items.map((item, index) => {
 
                 return (
-                    <div key={index} className={tw`accordion-item mb-4`}>
+                    <div key={index} className={`accordion-item mb-4`}>
                         <button
-                            className={tw`accordion-title w-full text-left py-3 px-4 bg-primary-50 text-white rounded-md hover:bg-primary-75 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-0`}
+                            className={`accordion-title w-full text-left py-3 px-4 bg-primary-50 text-white rounded-md hover:bg-primary-75 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-0`}
                             id={`accordion-title-${index}`}
                             onClick={() => handleToggle(index)}
                             aria-expanded={activeIndex === index}
@@ -49,10 +48,10 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
                             id={`accordion-content-${index}`}
                             role="region"
                             aria-labelledby={`accordion-title-${index}`}
-                            className={tw`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
+                            className={`accordion-content overflow-hidden transition-max-height duration-300 ease-in-out ${activeIndex === index ? 'max-h-96' : 'max-h-0'}`}
                             hidden={activeIndex !== index}
                         >
-                            <p className={tw`p-4 bg-gray-100 rounded-md mt-2 whitespace-pre-wrap`}>{item.content}</p>
+                            <p className={`p-4 bg-gray-100 rounded-md mt-2 whitespace-pre-wrap`}>{item.content}</p>
                         </div>
                     </div>
                 )
@@ -68,7 +67,10 @@ class AccordionElement extends HTMLElement {
         console.log('AccordionElement connected to the DOM');
         const shadowRoot = this.attachShadow({ mode: 'open' });
 
-        shadowRoot.adoptedStyleSheets = [sheet.target]
+        // Inject styles
+        const style = document.createElement('style');
+        style.textContent = tailwindStyles;
+        shadowRoot.appendChild(style);
 
         const container = document.createElement('div');
         shadowRoot.appendChild(container);
