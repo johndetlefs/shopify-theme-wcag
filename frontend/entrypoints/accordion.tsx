@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { cleanJson } from '../utilities/cleanJson';
 
 import tailwindStyles from './tailwind.css?inline';
 
@@ -8,10 +9,8 @@ type AccordionItem = {
     content: string;
 };
 
-type AccordionItems = AccordionItem[];
-
 type Data = {
-    items: AccordionItems;
+    items: AccordionItem[];
 };
 
 type AccordionProps = {
@@ -79,50 +78,6 @@ class AccordionElement extends HTMLElement {
         // Fetching live data from Shopify settings
         const blockData = this.getAttribute('data-settings');
 
-        /**
-         * Cleans a JSON string by escaping unescaped line breaks within string literals.
-         * @param {string} jsonStr - The JSON string to clean.
-         * @returns {string} - The cleaned JSON string with line breaks escaped.
-         */
-        function cleanJson(jsonStr: string) {
-            let inString = false;    // Tracks if we're inside a string literal
-            let escaped = false;     // Tracks if the current character is escaped
-            let result = '';         // Accumulates the cleaned JSON string
-
-            for (let i = 0; i < jsonStr.length; i++) {
-                let char = jsonStr[i];
-
-                if (char === '"' && !escaped) {
-                    inString = !inString; // Toggle inString status
-                    result += char;
-                    continue;
-                }
-
-                if (inString) {
-                    if (char === '\\' && !escaped) {
-                        escaped = true;    // Next character is escaped
-                        result += char;
-                        continue;
-                    }
-
-                    // If we encounter a line break inside a string, replace it with \\n
-                    if ((char === '\n' || char === '\r') && !escaped) {
-                        result += '\\n';
-                        continue;
-                    }
-                }
-
-                // Reset escaped status if it was set
-                if (escaped) {
-                    escaped = false;
-                }
-
-                result += char;
-            }
-
-            return result;
-        }
-
         // Sanitize the raw data to handle line breaks and special characters
         let rawData = blockData
 
@@ -140,54 +95,3 @@ class AccordionElement extends HTMLElement {
 // check if the element is already registered
 if (!customElements.get('accordion-faq'))
     customElements.define('accordion-faq', AccordionElement);
-
-
-// Adding to Shopify Theme as a Draggable Block
-// Add the following Liquid code to your Shopify theme's JSON template file
-/*
-{
-  "name": "FAQ Accordion",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "faq_item",
-      "name": "FAQ Item",
-      "settings": [
-        {
-          "id": "title",
-          "type": "text",
-          "label": "FAQ Title",
-          "default": "What is your return policy?"
-        },
-        {
-          "id": "content",
-          "type": "textarea",
-          "label": "FAQ Content",
-          "default": "You can return any item within 30 days of purchase."
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Default",
-      "category": "FAQ",
-      "blocks": [
-        {
-          "type": "faq_item"
-        }
-      ]
-    }
-  ]
-}
-*/
-
-// Use the following Liquid code to pass data to the web component in your Shopify theme template
-/*
-<div id="faq-accordion">
-  <accordion-faq data-settings='{{ block.settings | json }}'></accordion-faq>
-</div>
-*/
-
-// The above JSON should be added to your section or template file to define the block settings and structure, allowing it to be draggable onto any page.
-// You can then use the <accordion-faq></accordion-faq> custom element in your Liquid template to render the FAQ accordion with live data.
