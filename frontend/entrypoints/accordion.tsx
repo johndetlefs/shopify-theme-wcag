@@ -33,13 +33,14 @@ const Accordion = (props: AccordionProps) => {
         return (
           <div key={index} className={`accordion-item mb-4`}>
             <button
-              className={`accordion-title w-full text-left py-3 px-4 bg-primary-50 text-white rounded-sm hover:bg-primary-75 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-0`}
+              className={`accordion-title flex justify-between w-full text-left py-3 px-4 bg-primary-50 text-white rounded-sm hover:bg-primary-75 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-0`}
               id={`accordion-title-${index}`}
               onClick={() => handleToggle(index)}
               aria-expanded={activeIndex === index}
               aria-controls={`accordion-content-${index}`}
             >
               {item.title}
+              <i className={`${activeIndex === index ? 'bi-chevron-up' : 'bi-chevron-down'} text-white font-bold`}></i>
             </button>
             <div
               id={`accordion-content-${index}`}
