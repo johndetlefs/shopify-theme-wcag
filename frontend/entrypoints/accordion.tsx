@@ -65,6 +65,9 @@ class AccordionElement extends HTMLElement {
         console.log('AccordionElement connected to the DOM');
         const shadowRoot = this.attachShadow({ mode: 'open' });
 
+        const React = window.React;
+        const ReactDOM = window.ReactDOM;
+
         // Inject styles
         const style = document.createElement('style');
         style.textContent = tailwindStyles;
