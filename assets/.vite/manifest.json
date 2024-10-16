@@ -1,12 +1,12 @@
 {
   "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-DGnrDSgY.js",
+    "file": "accordion-CMMSnenM.js",
     "name": "accordion",
     "src": "frontend/entrypoints/accordion.tsx",
     "isEntry": true
   },
   "frontend/entrypoints/tailwind.css": {
-    "file": "tailwind-CCl_-S35.css",
+    "file": "tailwind-CRobUnO_.css",
     "src": "frontend/entrypoints/tailwind.css",
     "isEntry": true
   }
