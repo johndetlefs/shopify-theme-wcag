@@ -1,6 +1,7 @@
 import { render } from 'preact';
 import { useState } from 'preact/hooks';
 import { cleanJson } from '../utilities/cleanJson';
+import BaseComponent from '../components/BaseComponent';
 
 type AccordionItem = {
   title: string;
@@ -56,29 +57,21 @@ const Accordion = (props: AccordionProps) => {
   );
 };
 
-class AccordionElement extends HTMLElement {
+class AccordionElement extends BaseComponent {
   connectedCallback() {
-    console.log('AccordionElement connected to the DOM');
-
     const container = document.createElement('div');
-    this.appendChild(container);
-
-    // Fetching live data from Shopify settings
-    const blockData = this.getAttribute('data-settings');
-
-    // Sanitize the raw data to handle line breaks and special characters
-    let rawData = blockData;
-
-    if (rawData) {
-      rawData = cleanJson(rawData);
+    if (this.shadowRoot) {
+      this.shadowRoot.appendChild(container);
     }
 
+    // Fetch and parse data
+    const blockData = this.getAttribute('data-settings');
+    const rawData = blockData ? cleanJson(blockData) : null;
     const parsedData = rawData ? JSON.parse(rawData) : { items: [] };
 
+    // Render Preact component
     render(<Accordion data={parsedData} />, container);
   }
 }
 
-if (!customElements.get('accordion-faq')) {
-  customElements.define('accordion-faq', AccordionElement);
-}
+customElements.define('accordion-faq', AccordionElement);
