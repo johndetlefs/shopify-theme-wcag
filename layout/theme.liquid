@@ -3,8 +3,8 @@
   <head>
     {{ content_for_header }}
     {% render 'vite-tag' with 'tailwind.css' %}
-    {% render 'vite-tag' with 'react.js' %}
-    {% render 'vite-tag' with 'react-dom.js' %}
+    <script src="{{ 'react.js' | asset_url | split: '?' | first }}" crossorigin="anonymous" defer></script>
+    <script src="{{ 'react-dom.js' | asset_url | split: '?' | first }}" crossorigin="anonymous" defer></script>
   </head>
   <body>
     {% render 'skip-to-main' %}
