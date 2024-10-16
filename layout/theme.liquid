@@ -3,12 +3,8 @@
   <head>
     {{ content_for_header }}
     {% render 'vite-tag' with 'tailwind.css' %}
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" defer></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" defer></script>
-    <script defer>
-      window.React = window.React || React;
-      window.ReactDOM = window.ReactDOM || ReactDOM;
-    </script>
+    {% render 'vite-tag' with 'react.js' %}
+    {% render 'vite-tag' with 'react-dom.js' %}
   </head>
   <body>
     {% render 'skip-to-main' %}

@@ -1,12 +1,24 @@
 {
   "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-xe8uLFT1.js",
+    "file": "accordion-C2J-YZ7e.js",
     "name": "accordion",
     "src": "frontend/entrypoints/accordion.tsx",
     "isEntry": true
   },
+  "frontend/entrypoints/react-dom.js": {
+    "file": "react-dom-edwxBh1X.js",
+    "name": "react-dom",
+    "src": "frontend/entrypoints/react-dom.js",
+    "isEntry": true
+  },
+  "frontend/entrypoints/react.js": {
+    "file": "react-BeczSjuS.js",
+    "name": "react",
+    "src": "frontend/entrypoints/react.js",
+    "isEntry": true
+  },
   "frontend/entrypoints/tailwind.css": {
-    "file": "tailwind-CCl_-S35.css",
+    "file": "tailwind-CIOs3KzA.css",
     "src": "frontend/entrypoints/tailwind.css",
     "isEntry": true
   }

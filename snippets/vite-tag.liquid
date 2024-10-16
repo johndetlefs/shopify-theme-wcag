@@ -4,7 +4,11 @@
 {% endcomment %}
 {% assign path = vite-tag | replace: '~/', '../' | replace: '@/', '../' %}
 {% if path == "/frontend/entrypoints/accordion.tsx" or path == "accordion.tsx" %}
-  <script src="{{ 'accordion-xe8uLFT1.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'accordion-C2J-YZ7e.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+{% elsif path == "/frontend/entrypoints/react-dom.js" or path == "react-dom.js" %}
+  <script src="{{ 'react-dom-edwxBh1X.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+{% elsif path == "/frontend/entrypoints/react.js" or path == "react.js" %}
+  <script src="{{ 'react-BeczSjuS.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/entrypoints/tailwind.css" or path == "tailwind.css" %}
-  {{ 'tailwind-CCl_-S35.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'tailwind-CIOs3KzA.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}
