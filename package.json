@@ -8,21 +8,18 @@
   "scripts": {
     "login": "shopify theme dev --store get-rid-of-dad-bod",
     "dev": "vite",
-    "build": "vite build",
+    "build": "NODE_ENV=production vite build",
     "watch:vite": "vite",
     "watch:shopify": "npm run login",
     "start": "concurrently \"npm:watch:* \" -k",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@types/react": "npm:types-react@rc",
-    "@types/react-dom": "npm:types-react-dom@rc",
-    "react": "19.0.0-rc-ed966dac-20241007",
-    "react-dom": "19.0.0-rc-ed966dac-20241007",
-    "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
     "@shopify/prettier-plugin-liquid": "^1.5.2",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
     "@typescript-eslint/eslint-plugin": "^8.8.1",
     "@typescript-eslint/parser": "^8.8.1",
     "@vitejs/plugin-react": "^4.3.2",
@@ -33,8 +30,12 @@
     "glob": "^11.0.0",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "typescript": "^5.6.3",
+    "tailwindcss": "^3.4.13",
     "vite": "^5.4.8",
+    "vite-bundle-analyzer": "^0.12.1",
     "vite-plugin-shopify": "^3.0.1",
     "vite-plugin-shopify-import-maps": "^0.5.4",
     "vite-plugin-string": "^1.2.3"

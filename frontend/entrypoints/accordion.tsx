@@ -31,7 +31,6 @@ const Accordion: React.FC<AccordionProps> = ({ data }) => {
     return (
         <div className={`accordion w-full max-w-2xl mx-auto p-4 bg-white shadow-md rounded-md`}>
             {items.map((item, index) => {
-
                 return (
                     <div key={index} className={`accordion-item mb-4`}>
                         <button
