@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { createRoot } from 'react-dom/client';
+import { render, h } from 'preact';
+import { useState } from 'preact/hooks';
 import { cleanJson } from '../utilities/cleanJson';
 
 import tailwindStyles from './tailwind.css?inline';
@@ -18,8 +18,9 @@ type AccordionProps = {
 };
 
 // Accordion Component
-const Accordion: React.FC<AccordionProps> = ({ data }) => {
+const Accordion = (props: AccordionProps) => {
 
+    const { data } = props;
     const { items } = data;
 
     const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -65,9 +66,6 @@ class AccordionElement extends HTMLElement {
         console.log('AccordionElement connected to the DOM');
         const shadowRoot = this.attachShadow({ mode: 'open' });
 
-        const React = window.React;
-        const ReactDOM = window.ReactDOM;
-
         // Inject styles
         const style = document.createElement('style');
         style.textContent = tailwindStyles;
@@ -75,7 +73,6 @@ class AccordionElement extends HTMLElement {
 
         const container = document.createElement('div');
         shadowRoot.appendChild(container);
-        const root = createRoot(container);
 
         // Fetching live data from Shopify settings
         const blockData = this.getAttribute('data-settings');
@@ -89,7 +86,7 @@ class AccordionElement extends HTMLElement {
 
         const parsedData: Data = rawData ? JSON.parse(rawData) : { items: [] };
 
-        root.render(<Accordion data={parsedData} />);
+        render(<Accordion data={parsedData} />, container);
     }
 }
 

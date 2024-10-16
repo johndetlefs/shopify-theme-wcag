@@ -14,9 +14,8 @@
     "start": "concurrently \"npm:watch:* \" -k",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-  },
   "devDependencies": {
+    "@preact/preset-vite": "^2.9.1",
     "@shopify/prettier-plugin-liquid": "^1.5.2",
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
@@ -29,11 +28,12 @@
     "eslint-config-prettier": "^9.1.0",
     "glob": "^11.0.0",
     "postcss": "^8.4.47",
+    "preact": "^10.24.3",
     "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript": "^5.6.3",
     "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3",
     "vite": "^5.4.8",
     "vite-bundle-analyzer": "^0.12.1",
     "vite-plugin-shopify": "^3.0.1",

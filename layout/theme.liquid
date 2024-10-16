@@ -3,18 +3,6 @@
   <head>
     {{ content_for_header }}
     {% render 'vite-tag' with 'tailwind.css' %}
-    <script
-      src="{{ 'react.js' | asset_url | split: '?' | first }}"
-      type="module"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    <script
-      src="{{ 'react-dom.js' | asset_url | split: '?' | first }}"
-      type="module"
-      crossorigin="anonymous"
-      defer
-    ></script>
   </head>
   <body>
     {% render 'skip-to-main' %}
