@@ -1,9 +1,8 @@
-import { defineConfig } from "vite";
-import preact from "@preact/preset-vite";       
-import shopify from "vite-plugin-shopify";
-import autoprefixer from "autoprefixer";
-import tailwindcss from "tailwindcss";
-// import visualizer from 'vite-bundle-analyzer'
+import { defineConfig } from 'vite';
+import preact from '@preact/preset-vite';
+import shopify from 'vite-plugin-shopify';
+import autoprefixer from 'autoprefixer';
+import tailwindcss from 'tailwindcss';
 
 export default defineConfig({
   build: {
@@ -21,8 +20,7 @@ export default defineConfig({
   plugins: [
     preact(),
     shopify({
-      versionNumbers: false
+      versionNumbers: false,
     }), // Integrates Vite with Shopify
-    // visualizer(),
-  ]
+  ],
 });
