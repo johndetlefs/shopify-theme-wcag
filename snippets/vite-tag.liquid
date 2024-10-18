@@ -4,7 +4,7 @@
 {% endcomment %}
 {% assign path = vite-tag | replace: 'react-dom/test-utils/', '../../preact/test-utils/' | replace: 'react-dom/', '../../preact/compat/' | replace: 'react/', '../../preact/compat/' | replace: '~/', '../' | replace: '@/', '../' %}
 {% if path == "/frontend/entrypoints/accordion.tsx" or path == "accordion.tsx" %}
-  <script src="{{ 'accordion-C9JT7xz6.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'accordion-CKxKMgMb.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
 {% elsif path == "/frontend/entrypoints/tailwind.css" or path == "tailwind.css" %}
-  {{ 'tailwind-OIOiT-ph.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'tailwind-BR5ao1Wx.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}

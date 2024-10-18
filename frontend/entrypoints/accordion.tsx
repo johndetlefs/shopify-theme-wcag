@@ -31,16 +31,16 @@ const Accordion = (props: AccordionProps) => {
     <div className={`accordion w-full mx-auto p-4 bg-white`}>
       {items.map((item, index) => {
         return (
-          <div key={index} className={`accordion-item mb-4`}>
+          <div key={index} className={`accordion-item mb-2`}>
             <button
-              className={`accordion-title flex justify-between w-full text-left py-3 px-4 bg-primary-50 text-white rounded-sm hover:bg-primary-75 focus:outline-none focus-visible:ring-4 focus-visible:ring-primary-0`}
+              className={`btn btn-light btn-solid btn-md w-full`}
               id={`accordion-title-${index}`}
               onClick={() => handleToggle(index)}
               aria-expanded={activeIndex === index}
               aria-controls={`accordion-content-${index}`}
             >
               {item.title}
-              <i className={`${activeIndex === index ? 'bi-chevron-up' : 'bi-chevron-down'} text-white font-bold`}></i>
+              <i className={`${activeIndex === index ? 'bi-chevron-up' : 'bi-chevron-down'} `}></i>
             </button>
             <div
               id={`accordion-content-${index}`}
@@ -75,4 +75,4 @@ class AccordionElement extends BaseComponent {
   }
 }
 
-customElements.define('accordion-faq', AccordionElement);
+if (!customElements.get('accordion-faq')) customElements.define('accordion-faq', AccordionElement);

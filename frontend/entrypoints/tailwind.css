@@ -1,3 +1,103 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply flex justify-between items-center;
+
+    --bg-color: theme('colors.primary.50');
+    --text-color: theme('colors.white');
+    --hover-bg-color: theme('colors.primary.75');
+    --hover-text-color: theme('colors.white');
+    --focus-bg-color: theme('colors.primary.0');
+    --focus-ring-color: theme('colors.primary.25');
+    --focus-text-color: theme('colors.primary.100');
+
+    &-primary {
+      --bg-color: theme('colors.primary.50');
+      --text-color: theme('colors.white');
+      --hover-bg-color: theme('colors.primary.75');
+      --hover-text-color: theme('colors.white');
+      --focus-bg-color: theme('colors.primary.0');
+      --focus-ring-color: theme('colors.primary.25');
+      --focus-text-color: theme('colors.primary.100');
+    }
+
+    &-secondary {
+      --bg-color: theme('colors.secondary.50');
+      --text-color: theme('colors.white');
+      --hover-bg-color: theme('colors.secondary.75');
+      --hover-text-color: theme('colors.white');
+      --focus-bg-color: theme('colors.secondary.0');
+      --focus-ring-color: theme('colors.secondary.25');
+      --focus-text-color: theme('colors.secondary.100');
+    }
+
+    &-light {
+      --bg-color: theme('colors.gray.200');
+      --text-color: theme('colors.gray.800');
+      --hover-bg-color: theme('colors.gray.300');
+      --hover-text-color: theme('colors.gray.800');
+      --focus-bg-color: theme('colors.gray.400');
+      --focus-ring-color: theme('colors.gray.200');
+      --focus-text-color: theme('colors.gray.100');
+    }
+
+    &-dark {
+      --bg-color: theme('colors.gray.600');
+      --text-color: theme('colors.white');
+      --hover-bg-color: theme('colors.gray.800');
+      --hover-text-color: theme('colors.white');
+      --focus-bg-color: theme('colors.gray.400');
+      --focus-ring-color: theme('colors.gray.200');
+      --focus-text-color: theme('colors.gray.100');
+    }
+
+    &-solid {
+      @apply bg-[var(--bg-color)] text-[var(--text-color)];
+
+      i {
+        @apply text-[var(--text-color)];
+      }
+    }
+
+    &-outline {
+      @apply bg-transparent border border-[var(--bg-color)] text-[var(--bg-color)];
+
+      i {
+        @apply text-[var(--bg-color)];
+      }
+    }
+
+    &:hover {
+      @apply bg-[var(--hover-bg-color)] text-[var(--hover-text-color)];
+
+      i {
+        @apply text-[var(--hover-text-color)];
+      }
+    }
+
+    &:focus-visible {
+      @apply ring-inset ring-3 outline-none;
+
+      @apply ring-[var(--focus-ring-color)] text-[var(--focus-text-color)] bg-[var(--focus-bg-color)];
+
+      i {
+        @apply text-[var(--focus-text-color)];
+      }
+    }
+
+    &-sm {
+      @apply px-2 py-1 text-sm;
+    }
+
+    &-md {
+      @apply px-4 py-3 text-sm;
+    }
+
+    &-lg {
+      @apply px-6 py-4 text-base;
+    }
+  }
+}
