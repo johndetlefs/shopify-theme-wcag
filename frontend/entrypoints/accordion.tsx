@@ -33,7 +33,7 @@ const Accordion = (props: AccordionProps) => {
         return (
           <div key={index} className={`accordion-item mb-2`}>
             <button
-              className={`btn btn-light btn-solid btn-md w-full`}
+              className={`btn btn-primary btn-outline btn-md w-full`}
               id={`accordion-title-${index}`}
               onClick={() => handleToggle(index)}
               aria-expanded={activeIndex === index}

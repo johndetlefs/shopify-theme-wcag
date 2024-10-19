@@ -4,7 +4,7 @@
 
 @layer components {
   .btn {
-    @apply flex justify-between items-center;
+    @apply flex justify-between items-center rounded-sm border-2;
 
     --bg-color: theme('colors.primary.50');
     --text-color: theme('colors.white');
@@ -55,7 +55,7 @@
     }
 
     &-solid {
-      @apply bg-[var(--bg-color)] text-[var(--text-color)];
+      @apply bg-[var(--bg-color)] text-[var(--text-color)] border-[var(--bg-color)];
 
       i {
         @apply text-[var(--text-color)];
@@ -63,7 +63,7 @@
     }
 
     &-outline {
-      @apply bg-transparent border border-[var(--bg-color)] text-[var(--bg-color)];
+      @apply bg-transparent border-[var(--bg-color)] text-[var(--bg-color)];
 
       i {
         @apply text-[var(--bg-color)];
@@ -71,7 +71,7 @@
     }
 
     &:hover {
-      @apply bg-[var(--hover-bg-color)] text-[var(--hover-text-color)];
+      @apply bg-[var(--hover-bg-color)] border-[var(--hover-bg-color)] text-[var(--hover-text-color)];
 
       i {
         @apply text-[var(--hover-text-color)];
@@ -79,9 +79,9 @@
     }
 
     &:focus-visible {
-      @apply ring-inset ring-3 outline-none;
+      @apply ring-3 outline-none;
 
-      @apply ring-[var(--focus-ring-color)] text-[var(--focus-text-color)] bg-[var(--focus-bg-color)];
+      @apply ring-[var(--focus-ring-color)] text-[var(--focus-text-color)] bg-[var(--focus-bg-color)] border-[var(--focus-bg-color)];
 
       i {
         @apply text-[var(--focus-text-color)];

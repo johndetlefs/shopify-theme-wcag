@@ -32,17 +32,42 @@
           }
         }
       },
-      "block_order": [
-        "faq_item_bEnXRd",
-        "faq_item_HGHacz",
-        "faq_item_FybDjT",
-        "faq_item_CrUDCM"
-      ],
+      "block_order": ["faq_item_bEnXRd", "faq_item_HGHacz", "faq_item_FybDjT", "faq_item_CrUDCM"],
+      "settings": {}
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_bar_item_abc": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "Welcome to our store!",
+            "link_text": "Learn more",
+            "link_url": "#"
+          }
+        },
+        "announcement_bar_item_123": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "Free shipping on orders over $50",
+            "link_text": "Shop now",
+            "link_url": "#"
+          }
+        },
+        "announcement_bar_item_456": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "We're hiring!",
+            "link_text": "Apply now",
+            "link_url": "#"
+          }
+        }
+      },
+      "block_order": ["announcement_bar_item_abc", "announcement_bar_item_123", "announcement_bar_item_456"],
       "settings": {
+        "background_color": "light"
       }
     }
   },
-  "order": [
-    "accordion"
-  ]
+  "order": ["announcement-bar", "accordion"]
 }

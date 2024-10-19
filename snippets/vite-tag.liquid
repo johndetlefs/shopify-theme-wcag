@@ -4,7 +4,11 @@
 {% endcomment %}
 {% assign path = vite-tag | replace: 'react-dom/test-utils/', '../../preact/test-utils/' | replace: 'react-dom/', '../../preact/compat/' | replace: 'react/', '../../preact/compat/' | replace: '~/', '../' | replace: '@/', '../' %}
 {% if path == "/frontend/entrypoints/accordion.tsx" or path == "accordion.tsx" %}
-  <script src="{{ 'accordion-CKxKMgMb.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <script src="{{ 'accordion-Co-DXSp5.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <link rel="modulepreload" href="{{ 'BaseComponent-DxjEeqAa.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
+{% elsif path == "/frontend/entrypoints/announcement-bar.tsx" or path == "announcement-bar.tsx" %}
+  <script src="{{ 'announcement-bar-BaxugCg3.js' | asset_url | split: '?' | first }}" type="module" crossorigin="anonymous"></script>
+  <link rel="modulepreload" href="{{ 'BaseComponent-DxjEeqAa.js' | asset_url | split: '?' | first }}" crossorigin="anonymous">
 {% elsif path == "/frontend/entrypoints/tailwind.css" or path == "tailwind.css" %}
-  {{ 'tailwind-BR5ao1Wx.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
+  {{ 'tailwind-DG9lv-GB.css' | asset_url | split: '?' | first | stylesheet_tag: preload: preload_stylesheet }}
 {% endif %}

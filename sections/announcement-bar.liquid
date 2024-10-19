@@ -1,0 +1,76 @@
+{%- liquid
+  render 'vite-tag' with 'announcement-bar.tsx'
+-%}
+
+{%- capture props -%}
+  {
+    "items": [
+      {% for block in section.blocks %}
+        {
+          "text": "{{ block.settings.text | escape }}",
+          "linkText": "{{ block.settings.link_text | escape }}",
+          "linkUrl": "{{ block.settings.link_url | escape }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    "backgroundColor": "{{ section.settings.background_color }}"
+  }
+{%- endcapture -%}
+
+<announcement-bar data-settings="{{ props | escape }}"></announcement-bar>
+
+{% schema %}
+{
+  "name": "Announcement Bar",
+  "settings": [
+    {
+      "type": "select",
+      "id": "background_color",
+      "label": "Background Color",
+      "options": [
+        { "value": "primary", "label": "Primary" },
+        { "value": "secondary", "label": "Secondary" },
+        { "value": "light", "label": "Light" },
+        { "value": "dark", "label": "Dark" }
+      ],
+      "default": "primary"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "announcement_bar_item",
+      "name": "Announcement Bar Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Announcement Text"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": ""
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL",
+          "default": ""
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Announcement Bar",
+      "blocks": [
+        {
+          "type": "announcement_bar_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
