@@ -22,20 +22,6 @@
 {% schema %}
 {
   "name": "Announcement Bar",
-  "settings": [
-    {
-      "type": "select",
-      "id": "background_color",
-      "label": "Background Color",
-      "options": [
-        { "value": "primary", "label": "Primary" },
-        { "value": "secondary", "label": "Secondary" },
-        { "value": "light", "label": "Light" },
-        { "value": "dark", "label": "Dark" }
-      ],
-      "default": "primary"
-    }
-  ],
   "blocks": [
     {
       "type": "announcement_bar_item",
@@ -71,9 +57,7 @@
           "type": "announcement_bar_item"
         }
       ],
-      "settings": {
-        "background_color": "primary"
-      }
+      "settings": {}
     }
   ]
 }
