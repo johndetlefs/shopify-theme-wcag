@@ -43,7 +43,7 @@
           "settings": {
             "text": "Welcome to our store!",
             "link_text": "Learn more",
-            "link_url": "#"
+            "link_url": "/"
           }
         },
         "announcement_bar_item_123": {
@@ -51,7 +51,7 @@
           "settings": {
             "text": "Free shipping on orders over $50",
             "link_text": "Shop now",
-            "link_url": "#"
+            "link_url": "/"
           }
         },
         "announcement_bar_item_456": {
@@ -59,7 +59,7 @@
           "settings": {
             "text": "We're hiring!",
             "link_text": "Apply now",
-            "link_url": "#"
+            "link_url": "/"
           }
         }
       },
