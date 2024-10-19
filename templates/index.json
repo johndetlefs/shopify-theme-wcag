@@ -1,5 +1,42 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
+    "announcement_bar_ebzy8X": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_bar_item_E8NPA7": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "This is the default announcement text.",
+            "link_text": "link text",
+            "link_url": "/"
+          }
+        },
+        "announcement_bar_item_pcLMeR": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "This is the default announcement text.",
+            "link_text": "link text",
+            "link_url": "/"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_bar_item_E8NPA7",
+        "announcement_bar_item_pcLMeR"
+      ],
+      "settings": {
+        "background_color": "primary"
+      }
+    },
     "accordion": {
       "type": "accordion",
       "blocks": {
@@ -32,42 +69,19 @@
           }
         }
       },
-      "block_order": ["faq_item_bEnXRd", "faq_item_HGHacz", "faq_item_FybDjT", "faq_item_CrUDCM"],
-      "settings": {}
-    },
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_bar_item_abc": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "Welcome to our store!",
-            "link_text": "Learn more",
-            "link_url": "/"
-          }
-        },
-        "announcement_bar_item_123": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "Free shipping on orders over $50",
-            "link_text": "Shop now",
-            "link_url": "/"
-          }
-        },
-        "announcement_bar_item_456": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "We're hiring!",
-            "link_text": "Apply now",
-            "link_url": "/"
-          }
-        }
-      },
-      "block_order": ["announcement_bar_item_abc", "announcement_bar_item_123", "announcement_bar_item_456"],
+      "block_order": [
+        "faq_item_bEnXRd",
+        "faq_item_HGHacz",
+        "faq_item_FybDjT",
+        "faq_item_CrUDCM"
+      ],
+      "disabled": true,
       "settings": {
-        "background_color": "light"
       }
     }
   },
-  "order": ["announcement-bar", "accordion"]
+  "order": [
+    "announcement_bar_ebzy8X",
+    "accordion"
+  ]
 }
