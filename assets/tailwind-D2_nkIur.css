@@ -754,9 +754,25 @@ video {
 .rounded-sm {
   border-radius: 0.125rem;
 }
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+}
+.bg-gray-800 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+}
+.bg-primary-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 120 166 / var(--tw-bg-opacity));
+}
+.bg-secondary-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(166 46 120 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;

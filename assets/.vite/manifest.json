@@ -1,28 +1,28 @@
 {
-  "_BaseComponent-DxjEeqAa.js": {
-    "file": "BaseComponent-DxjEeqAa.js",
+  "_BaseComponent-BqtFtXhS.js": {
+    "file": "BaseComponent-BqtFtXhS.js",
     "name": "BaseComponent"
   },
   "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-Co-DXSp5.js",
+    "file": "accordion-bZY96-vh.js",
     "name": "accordion",
     "src": "frontend/entrypoints/accordion.tsx",
     "isEntry": true,
     "imports": [
-      "_BaseComponent-DxjEeqAa.js"
+      "_BaseComponent-BqtFtXhS.js"
     ]
   },
   "frontend/entrypoints/announcement-bar.tsx": {
-    "file": "announcement-bar-BaxugCg3.js",
+    "file": "announcement-bar-C-lSFimp.js",
     "name": "announcement-bar",
     "src": "frontend/entrypoints/announcement-bar.tsx",
     "isEntry": true,
     "imports": [
-      "_BaseComponent-DxjEeqAa.js"
+      "_BaseComponent-BqtFtXhS.js"
     ]
   },
   "frontend/entrypoints/tailwind.css": {
-    "file": "tailwind-DG9lv-GB.css",
+    "file": "tailwind-D2_nkIur.css",
     "src": "frontend/entrypoints/tailwind.css",
     "isEntry": true
   }

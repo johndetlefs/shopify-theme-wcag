@@ -1,4 +1,4 @@
-import { B as BaseComponent, a as B, u, h } from "./BaseComponent-DxjEeqAa.js";
+import { B as BaseComponent, a as B, u, h } from "./BaseComponent-BqtFtXhS.js";
 function cleanJson(jsonStr) {
   let inString = false;
   let escaped = false;

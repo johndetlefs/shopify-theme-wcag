@@ -2,6 +2,14 @@ import { render } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 import BaseComponent from '../components/BaseComponent';
 
+const backgroundClasses = {
+  dark: 'bg-gray-800',
+  primary: 'bg-primary-50',
+  secondary: 'bg-secondary-50',
+  light: 'bg-gray-100',
+  default: 'bg-black',
+};
+
 interface SimpleSliderProps {
   items: { text: string; linkText?: string; linkUrl?: string }[];
   backgroundColor: string;
@@ -12,6 +20,8 @@ const SimpleSlider = (props: SimpleSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const slideInterval = useRef<number | null>(null);
   const SLIDE_DURATION = 5000; // Duration to show each slide (in milliseconds)
+
+  const [textColor, setTextColor] = useState('text-black');
 
   useEffect(() => {
     // Function to go to the next slide
@@ -30,24 +40,17 @@ const SimpleSlider = (props: SimpleSliderProps) => {
     };
   }, [items.length]);
 
-  // Determine text color based on background color
-  const textColor = ['dark', 'primary', 'secondary'].includes(backgroundColor) ? 'text-white' : 'text-black';
+  useEffect(() => {
+    // Determine text color based on background color
+    const tempColor = ['dark', 'primary', 'secondary'].includes(backgroundColor) ? 'text-white' : 'text-black';
 
-  const background = (() => {
-    switch (backgroundColor) {
-      case 'dark':
-        return 'gray-800';
-      case 'primary':
-        return 'primary-50';
-      case 'secondary':
-        return 'secondary-50';
-      default:
-        return 'gray-100';
-    }
-  })();
+    setTextColor(tempColor);
+  }, [backgroundColor]);
 
   return (
-    <div className={`relative h-[50px] overflow-hidden w-full bg-${background}`}>
+    <div
+      className={`relative h-[50px] overflow-hidden w-full ${backgroundClasses[backgroundColor as keyof typeof backgroundClasses] || backgroundClasses.default}`}
+    >
       <div
         className="flex h-full transition-transform duration-700 ease-in-out"
         style={{ transform: `translateX(-${currentIndex * 100}%)` }}

@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -27,6 +29,9 @@ export default {
           75: '#8d1c62', // darker
           100: '#523e1f', // darkest
         },
+        black: colors.black,
+        white: colors.white,
+        gray: colors.gray,
       },
     },
   },
