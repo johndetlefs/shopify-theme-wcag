@@ -9,34 +9,6 @@
  */
 {
   "sections": {
-    "announcement_bar_ebzy8X": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_bar_item_E8NPA7": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "This is the default announcement text.",
-            "link_text": "link text",
-            "link_url": "/"
-          }
-        },
-        "announcement_bar_item_pcLMeR": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "This is the default announcement text.",
-            "link_text": "link text",
-            "link_url": "/"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_bar_item_E8NPA7",
-        "announcement_bar_item_pcLMeR"
-      ],
-      "settings": {
-        "background_color": "primary"
-      }
-    },
     "accordion": {
       "type": "accordion",
       "blocks": {
@@ -75,13 +47,31 @@
         "faq_item_FybDjT",
         "faq_item_CrUDCM"
       ],
-      "disabled": true,
       "settings": {
+      }
+    },
+    "announcement_bar_BNyqDn": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_bar_item_7arF9f": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "This is the default announcement text.",
+            "link_text": "link text asdfa",
+            "link_url": "/"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_bar_item_7arF9f"
+      ],
+      "settings": {
+        "background_color": "dark"
       }
     }
   },
   "order": [
-    "announcement_bar_ebzy8X",
-    "accordion"
+    "accordion",
+    "announcement_bar_BNyqDn"
   ]
 }
