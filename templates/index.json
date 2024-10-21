@@ -15,14 +15,23 @@
         "announcement_bar_item_7arF9f": {
           "type": "announcement_bar_item",
           "settings": {
-            "text": "This is the default announcement text.",
-            "link_text": "link text asdfa",
+            "text": "I'd like to get some of that!",
+            "link_text": "Learn more",
+            "link_url": "/"
+          }
+        },
+        "announcement_bar_item_arQ6Dt": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "Hot damn! © -- this & that.",
+            "link_text": "Upgrade Now! 🙂",
             "link_url": "/"
           }
         }
       },
       "block_order": [
-        "announcement_bar_item_7arF9f"
+        "announcement_bar_item_7arF9f",
+        "announcement_bar_item_arQ6Dt"
       ],
       "settings": {
         "background_color": "primary"
