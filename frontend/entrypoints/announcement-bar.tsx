@@ -83,7 +83,15 @@ class SimpleSliderElement extends BaseComponent {
     }
 
     const settings = this.getAttribute('data-settings');
-    const parsedSettings = settings ? JSON.parse(settings) : { items: [], backgroundColor: 'light' };
+    const parsedSettings = settings
+      ? JSON.parse(
+          settings.replace(/&[a-z]+;/g, (match) => {
+            const textArea = document.createElement('textarea');
+            textArea.innerHTML = match;
+            return textArea.value;
+          }),
+        )
+      : { items: [], backgroundColor: 'light' };
 
     // Render Preact component
     render(<SimpleSlider items={parsedSettings.items} backgroundColor={parsedSettings.backgroundColor} />, container);
