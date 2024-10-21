@@ -85,7 +85,7 @@ class SimpleSliderElement extends BaseComponent {
     const settings = this.getAttribute('data-settings');
     const parsedSettings = settings
       ? JSON.parse(
-          settings.replace(/&[a-z]+;/g, (match) => {
+          settings.replace(/&[#a-zA-Z0-9]+;/g, (match) => {
             const textArea = document.createElement('textarea');
             textArea.innerHTML = match;
             return textArea.value;
