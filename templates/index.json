@@ -9,6 +9,25 @@
  */
 {
   "sections": {
+    "announcement_bar_BNyqDn": {
+      "type": "announcement-bar",
+      "blocks": {
+        "announcement_bar_item_7arF9f": {
+          "type": "announcement_bar_item",
+          "settings": {
+            "text": "This is the default announcement text.",
+            "link_text": "link text asdfa",
+            "link_url": "/"
+          }
+        }
+      },
+      "block_order": [
+        "announcement_bar_item_7arF9f"
+      ],
+      "settings": {
+        "background_color": "dark"
+      }
+    },
     "accordion": {
       "type": "accordion",
       "blocks": {
@@ -49,29 +68,10 @@
       ],
       "settings": {
       }
-    },
-    "announcement_bar_BNyqDn": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement_bar_item_7arF9f": {
-          "type": "announcement_bar_item",
-          "settings": {
-            "text": "This is the default announcement text.",
-            "link_text": "link text asdfa",
-            "link_url": "/"
-          }
-        }
-      },
-      "block_order": [
-        "announcement_bar_item_7arF9f"
-      ],
-      "settings": {
-        "background_color": "dark"
-      }
     }
   },
   "order": [
-    "accordion",
-    "announcement_bar_BNyqDn"
+    "announcement_bar_BNyqDn",
+    "accordion"
   ]
 }
