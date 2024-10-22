@@ -66,12 +66,22 @@ class AccordionElement extends BaseComponent {
     }
 
     // Fetch and parse data
-    const blockData = this.getAttribute('data-settings');
-    const rawData = blockData ? cleanJson(blockData) : null;
-    const parsedData = rawData ? JSON.parse(rawData) : { items: [] };
+    const settings = this.getAttribute('data-settings');
+
+    const rawData = settings ? cleanJson(settings) : null;
+
+    const parsedSettings = rawData
+      ? JSON.parse(
+          rawData.replace(/&(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);/g, (match) => {
+            const textArea = document.createElement('textarea');
+            textArea.innerHTML = match;
+            return textArea.value;
+          }),
+        )
+      : { items: [], backgroundColor: 'light' };
 
     // Render Preact component
-    render(<Accordion data={parsedData} />, container);
+    render(<Accordion data={parsedSettings} />, container);
   }
 }
 
