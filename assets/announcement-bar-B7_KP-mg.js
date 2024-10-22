@@ -59,7 +59,13 @@ class SimpleSliderElement extends BaseComponent {
       this.shadowRoot.appendChild(container);
     }
     const settings = this.getAttribute("data-settings");
-    const parsedSettings = settings ? JSON.parse(settings) : { items: [], backgroundColor: "light" };
+    const parsedSettings = settings ? JSON.parse(
+      settings.replace(/&[#a-zA-Z0-9]+;/g, (match) => {
+        const textArea = document.createElement("textarea");
+        textArea.innerHTML = match;
+        return textArea.value;
+      })
+    ) : { items: [], backgroundColor: "light" };
     B(/* @__PURE__ */ u(SimpleSlider, { items: parsedSettings.items, backgroundColor: parsedSettings.backgroundColor }), container);
   }
 }

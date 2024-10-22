@@ -4,7 +4,7 @@
     "name": "BaseComponent"
   },
   "frontend/entrypoints/accordion.tsx": {
-    "file": "accordion-bZY96-vh.js",
+    "file": "accordion-D2iqvOpk.js",
     "name": "accordion",
     "src": "frontend/entrypoints/accordion.tsx",
     "isEntry": true,
@@ -13,7 +13,7 @@
     ]
   },
   "frontend/entrypoints/announcement-bar.tsx": {
-    "file": "announcement-bar-C-lSFimp.js",
+    "file": "announcement-bar-B7_KP-mg.js",
     "name": "announcement-bar",
     "src": "frontend/entrypoints/announcement-bar.tsx",
     "isEntry": true,

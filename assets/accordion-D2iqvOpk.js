@@ -71,10 +71,16 @@ class AccordionElement extends BaseComponent {
     if (this.shadowRoot) {
       this.shadowRoot.appendChild(container);
     }
-    const blockData = this.getAttribute("data-settings");
-    const rawData = blockData ? cleanJson(blockData) : null;
-    const parsedData = rawData ? JSON.parse(rawData) : { items: [] };
-    B(/* @__PURE__ */ u(Accordion, { data: parsedData }), container);
+    const settings = this.getAttribute("data-settings");
+    const rawData = settings ? cleanJson(settings) : null;
+    const parsedSettings = rawData ? JSON.parse(
+      rawData.replace(/&(#\d+|#x[0-9a-fA-F]+|[a-zA-Z]+);/g, (match) => {
+        const textArea = document.createElement("textarea");
+        textArea.innerHTML = match;
+        return textArea.value;
+      })
+    ) : { items: [], backgroundColor: "light" };
+    B(/* @__PURE__ */ u(Accordion, { data: parsedSettings }), container);
   }
 }
 if (!customElements.get("accordion-faq")) customElements.define("accordion-faq", AccordionElement);
